@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+.container {
+  background: radial-gradient( #17212f 20%) ;
+  color: white;
+  padding: 80px 20px;
+}
+
+/* TÍTULO PRINCIPAL */
+.titulo {
+  padding-top: 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.titulo::after {
+  content: '';
+  width: 120px;
+  height: 3px;
+  background: #c9a227;
+  display: block;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* ================= NOVO SÓCIOS (ADICIONADO) ================= */
+
+.listaSocios {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.socioLinha {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.socioLinha:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.socioImagem {
+  position: relative;
+  width: 380px;
+  height: 480px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+.socioImagem:hover .image{
+  transform: scale(1.1); 
+}
+
+.socioInfo {
+  flex: 1;
+}
+
+.socioInfo h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  margin-bottom: 6px;
+}
+
+.botaoPerfil {
+  background: transparent;
+  border: 1px solid #c9a227;
+  color: #c9a227;
+  padding: 12px 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botaoPerfil:hover {
+  background: #c9a227;
+  color: #0d1117;
+}
+
+.hr {
+  border: none;
+  height: 2px;
+  width: 80%;
+  margin-top: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 162, 39, 0.8),
+    transparent
+  );
+}
+
+/* ================= SEU CSS ORIGINAL ================= */
+
+/* IMAGEM - CORRIGIDA */
+.imageWrapper,
+.imageWrapperGrande,
+.imageWrapperPequena {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #0d1117;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.card:hover .image {
+  transform: scale(1.08);
+}
+
+/* Aspect-ratio flexível */
+.imageWrapper {
+  aspect-ratio: 4 / 3.2;
+}
+
+.imageWrapperGrande {
+  aspect-ratio: 4 / 3;
+}
+
+.imageWrapperPequena {
+  aspect-ratio: 1 / 1.1;
+}
+
+/* CONTEÚDO DO CARD */
+.content {
+  padding: 32px;
+}
+
+.content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.cargo {
+  color: #f5b942;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.area {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.descricao {
+  color: #cbd5e1;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  margin-bottom: 20px;
+}
+
+/* EQUIPE */
+.contEquipe {
+  background: radial-gradient(  #17212f 60%);
+  padding: 80px 20px 100px;
+}
+
+.subtitulo {
+  text-align: center;
+  margin-bottom: 60px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #ffffff;
+  position: relative;
+}
+
+.subtitulo::after {
+  content: '';
+  width: 120px;
+  height: 3px;
+  background: #c9a227;
+  display: block;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+.gridEquipe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 360px));
+  gap: 32px;
+  justify-content: center;
+}
+
+.cardEquipe {
+  background: #3e4147;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.cardEquipe:hover {
+  transform: translateY(-10px);
+  
+}
+
+.contentEquipe {
+  padding: 20px;
+  text-align: center;
+}
+
+.contentEquipe h3 {
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.contentEquipe span {
+  font-size: 0.95rem;
+  color: #9ca3af;
+}
+
+/* MODAL */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.4s ease;
+  padding: 12px; /* espaço nas bordas em mobile */
+}
+
+.modal {
+  width: 90%;
+  max-width: 1400px;
+  max-height: 90vh;
+  background: #f8f5ee;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+}
+
+.modalLeft {
+  width: 50%;
+  padding: 60px 80px;
+  overflow-y: auto;
+  color: #1e293b;
+  position: relative;
+}
+
+.modalLeft h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 12px;
+  color: #0f1b2d;
+}
+
+.modalCargo {
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #c9a227;
+  margin-bottom: 8px;
+}
+
+.modalArea {
+  color: #475569;
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+}
+
+.modalDescricao {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: #334155;
+  margin-bottom: 32px;
+  white-space: pre-line;
+}
+
+/* Ícones redes sociais no modal */
+.modalIcons {
+  display: flex;
+  gap: 28px;
+  margin-top: 32px;
+  color: #0f1b2d;
+}
+
+.modalIcons svg {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modalIcons svg:hover {
+  color: #c9a227;
+  transform: translateY(-4px);
+}
+
+.closeButton {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  background: transparent;
+  border: none;
+  font-size: 2.8rem;
+  color: #0f1b2d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  color: #c9a227;
+  transform: rotate(90deg) scale(1.15);
+}
+
+.modalRight {
+  width: 50%;
+  position: relative;
+  background: #0d1117;
+}
+
+.modalImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+
+/* ===========================Responsividade============================== */
+
+
+
+@media (max-width: 1100px) {
+  .modal {
+    flex-direction: column;
+    max-height: 95vh;
+  }
+  .modalLeft,
+  .modalRight {
+    width: 100%;
+  }
+  .modalRight {
+    height: 40vh;
+    min-height: 300px;
+    order: -1;
+  }
+  .modalLeft {
+    padding: 80px 40px 40px;
+  }
+  .closeButton {
+    top: 20px;
+    left: 20px;
+  }
+  .modalLeft h2 {
+    font-size: 2.4rem;
+  }
+  .modalIcons {
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .contEquipe {
+    padding: 60px 16px;
+  }
+
+  .titulo {
+    margin-bottom: 40px;
+  }
+
+  .listaSocios {
+    gap: 70px;
+  }
+
+  .socioLinha,
+  .socioLinha:nth-child(even) {
+    flex-direction: column !important;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .socioImagem {
+    width: 100%;
+    max-width: 340px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .socioInfo {
+    text-align: center;
+  }
+
+  .socioInfo h2 {
+    font-size: 2.2rem;
+  }
+
+  .botaoPerfil {
+    margin: 20px auto 0;
+    padding: 10px 24px;
+  }
+
+  .hr {
+    margin-top: 100px;
+    width: 90%;
+  }
+
+  .gridEquipe {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 44px;
+    padding: 0 10px;
+  }
+
+  .cardEquipe {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .contentEquipe {
+    padding: 26px 20px;
+  }
+
+  .contentEquipe h3 {
+    font-size: 1.55rem;
+  }
+
+  .contentEquipe span {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo {
+    font-size: 1.4rem;
+    margin-bottom: 32px;
+  }
+
+  .titulo::after {
+    width: 90px;
+  }
+
+  .socioInfo h2 {
+    font-size: 2rem;
+  }
+
+  .socioInfo .descricao {
+    font-size: 0.95rem;
+  }
+
+  .subtitulo {
+    font-size: 2.2rem;
+  }
+
+  .botaoPerfil {
+    background-color: #c9a227;
+    color: #0d1117;
+  }
+
+  .modalOverlay {
+    padding: 8px;
+  }
+
+  .modalLeft {
+    padding: 70px 20px 32px;
+  }
+
+  .closeButton {
+    top: 16px;
+    left: 16px;
+    font-size: 2.2rem;
+  }
+
+  .modalLeft h2 {
+    font-size: 2.1rem;
+  }
+
+  .modalDescricao {
+    font-size: 0.98rem;
+  }
+
+  .modalIcons {
+    gap: 20px;
+  }
+
+  .modalIcons svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Equipe ~30% maior que a versão anterior */
+  .gridEquipe {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 44px;
+  }
+
+  .cardEquipe {
+    max-width: 460px;
+  }
+
+  .imageWrapperPequena {
+    aspect-ratio: 1 / 1.05;
+  }
+
+  .contentEquipe {
+    padding: 24px 18px;
+  }
+
+  .contentEquipe h3 {
+    font-size: 1.5rem;
+  }
+
+  .contentEquipe span {
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .container,
+  .contEquipe {
+    padding: 50px 12px;
+  }
+
+  .socioImagem {
+    max-width: 300px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .socioInfo h2 {
+    font-size: 1.8rem;
+  }
+
+  .botaoPerfil {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .modalLeft {
+    padding: 70px 16px 24px;
+  }
+
+  .modalLeft h2 {
+    font-size: 1.9rem;
+  }
+
+  .modalCargo,
+  .modalArea {
+    font-size: 1rem;
+  }
+
+  .modalDescricao {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* Equipe maior em telas pequenas */
+  .gridEquipe {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .cardEquipe {
+    max-width: 420px;
+  }
+
+  .contentEquipe h3 {
+    font-size: 1.45rem;
+  }
+
+  .contentEquipe span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .gridEquipe {
+    grid-template-columns: 1fr;
+  }
+
+  .cardEquipe {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .contentEquipe {
+    padding: 22px 16px;
+  }
+
+  .contentEquipe h3 {
+    font-size: 1.4rem;
+  }
+
+  .contentEquipe span {
+    font-size: 0.98rem;
+  }
+}
+
+/* ANIMAÇÃO */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
